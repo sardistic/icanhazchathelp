@@ -16,6 +16,7 @@
             align-items: center;
             height: 100vh;
             text-align: center;
+            overflow: hidden;
         }
         .container {
             max-width: 600px;
@@ -23,9 +24,11 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+            position: relative;
         }
         h1 {
-            color: #BB86FC;
+            color: #2196F3;
             font-size: 24px;
             margin-bottom: 20px;
         }
@@ -47,12 +50,13 @@
             padding: 10px 20px;
             font-size: 16px;
             color: #fff;
-            background-color: #BB86FC;
+            background-color: #2196F3;
             border-radius: 5px;
             text-decoration: none;
+            transition: background-color 0.3s;
         }
         a:hover {
-            background-color: #8A64D6;
+            background-color: #1976D2;
         }
         .disclaimer {
             background-color: #282828;
@@ -67,20 +71,41 @@
             font-size: 14px;
         }
         .incident a {
-            color: #BB86FC;
+            color: #2196F3;
             text-decoration: none;
         }
         .incident a:hover {
             text-decoration: underline;
         }
+        /* CSS3 Background Animation */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #2196F3, #1E1E1E, #1976D2);
+            background-size: 400% 400%;
+            z-index: 1;
+            animation: gradientAnimation 15s ease infinite;
+        }
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .container:hover {
+            box-shadow: 0 0 40px rgba(33, 150, 243, 0.8);
+        }
     </style>
 </head>
 <body>
+    <div class="background"></div>
     <div class="container">
         <h1>Chrome Download Links</h1>
         
         <div class="blurb">
-            <p>If you're encountering the peer connection error while attempting to cam up, this is a known issue with the recent Chrome 127 update that also affects Chromium-based browsers like Edge, Opera, and Brave. You can try Firefox, Safari, or other non-Chromium browsers. If you have issues with those browsers, you can attempt a standalone version of Chrome below. These do not require uninstalling your current Chrome or any installation.</p>
+            <p>If you're encountering the peer connection error while attempting to cam up, this is a known issue with the recent Chrome 127 update that also affects Chromium-based browsers like Edge, Opera, and Brave. You can try non-Chromium browsers such as Firefox, Safari, or Internet Explorer. If you have issues with those browsers, you can attempt a standalone version of Chrome below. These do not require uninstalling your current Chrome or any installation.</p>
         </div>
 
         <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Mac/1266941/" download>Download Chrome for Mac</a>
@@ -98,7 +123,7 @@
         </div>
 
         <div class="incident">
-            <p>Detected Incident: <a href="https://status.wowza.com/clz2kdat3244008iboeemdk78bv" target="_blank">Peer Connection Error Incident Report</a></p>
+            <p>Incident with Wowza WebRTC Publishing Page - Failing on Chrome Browser Version 127.0.6533.73: <a href="https://status.wowza.com/clz2kdat3244008iboeemdk78bv" target="_blank">View Incident Report</a></p>
         </div>
     </div>
 </body>
