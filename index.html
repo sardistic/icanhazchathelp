@@ -7,24 +7,25 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #121212;
+            color: #E0E0E0;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            text-align: center;
         }
         .container {
-            text-align: center;
-            background-color: #fff;
+            max-width: 600px;
+            background-color: #1E1E1E;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
         }
         h1 {
-            color: #0078D7;
+            color: #BB86FC;
             font-size: 24px;
             margin-bottom: 20px;
         }
@@ -32,25 +33,55 @@
             font-size: 16px;
             line-height: 1.6;
         }
+        .blurb {
+            background-color: #333;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            color: #E0E0E0;
+            text-align: left;
+        }
         a {
             display: inline-block;
             margin: 10px 0;
             padding: 10px 20px;
             font-size: 16px;
             color: #fff;
-            background-color: #0078D7;
+            background-color: #BB86FC;
             border-radius: 5px;
             text-decoration: none;
         }
         a:hover {
-            background-color: #005BB5;
+            background-color: #8A64D6;
+        }
+        .disclaimer {
+            background-color: #282828;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            color: #B0B0B0;
+            margin-top: 20px;
+        }
+        .incident {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .incident a {
+            color: #BB86FC;
+            text-decoration: none;
+        }
+        .incident a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Download Chrome for Your System</h1>
-        <p>Select your operating system and follow the instructions to download and run Chrome.</p>
+        <h1>Chrome Download Links</h1>
+        
+        <div class="blurb">
+            <p>If you're encountering the peer connection error while attempting to cam up, this is a known issue with the recent Chrome 127 update that also affects Chromium-based browsers like Edge, Opera, and Brave. You can try Firefox, Safari, or other non-Chromium browsers. If you have issues with those browsers, you can attempt a standalone version of Chrome below. These do not require uninstalling your current Chrome or any installation.</p>
+        </div>
 
         <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Mac/1266941/" download>Download Chrome for Mac</a>
         <p>1. Download the <code>chrome.zip</code> file.</p>
@@ -58,9 +89,17 @@
         <p>3. Run <code>chrome.app</code> (no installation required).</p>
 
         <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Win/1252758/" download>Download Chrome for Windows</a>
-        <p>1. Download the <code>chrome.zip</code> file.</p>
+        <p>1. Download the <code>chrome-win.zip</code> file.</p>
         <p>2. Extract the contents.</p>
         <p>3. Run <code>chrome.exe</code> (no installation required).</p>
+
+        <div class="disclaimer">
+            <p><strong>Security Notice:</strong> Using older browsers can expose you to security vulnerabilities. These standalone versions of Chrome are provided for testing purposes only and are not recommended for regular use.</p>
+        </div>
+
+        <div class="incident">
+            <p>Detected Incident: <a href="https://status.wowza.com/clz2kdat3244008iboeemdk78bv" target="_blank">Peer Connection Error Incident Report</a></p>
+        </div>
     </div>
 </body>
 </html>
