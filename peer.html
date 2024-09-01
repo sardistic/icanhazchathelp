@@ -144,6 +144,13 @@
             margin-top: 20px; /* Space above the chatter box */
         }
 
+        /* Reply Box Style */
+        .reply-box {
+            padding-left: 50px; /* Indentation for reply */
+            border-left: 4px solid #7289da; /* Blue left border to indicate a reply */
+            margin-top: -10px; /* Bring it closer to the original message */
+        }
+
         .footer {
             text-align: center;
             margin-top: 20px;
@@ -152,13 +159,6 @@
             position: absolute;
             bottom: 0;
             width: 100%;
-        }
-
-        /* Reply Box Style */
-        .reply-box {
-            padding-left: 50px; /* Indentation for reply */
-            border-left: 4px solid #7289da; /* Blue left border to indicate a reply */
-            margin-top: -10px; /* Bring it closer to the original message */
         }
     </style>
 </head>
@@ -210,24 +210,18 @@
             </div>
         </div>
 
-        <!-- Dark Reader Extension Information -->
-        <div class="message-box profile-box">
+        <!-- Download Instructions Box -->
+        <div class="message-box download-box">
             <div class="message-header">
                 <img src="https://images.icanhazchat.com/users/sa/sardistic/cEFJZ.gif" alt="Profile Picture" class="profile-pic">
                 <div>
                     <a href="https://www.icanhazchat.com/user/sardistic" class="username sardistic">sardistic</a>
-                    <span class="timestamp" id="timestamp2">August 31, 2024 12:10 PM</span>
+                    <span class="timestamp" id="timestamp2">August 31, 2024 12:01 PM</span>
                 </div>
             </div>
             <div class="message-content">
-                <p>If you're trying to use the Dark Reader extension, you'll need to download the <a href="https://github.com/sardistic/darkreader/blob/main/darkreader-chrome.zip" class="link">darkreader-chrome.zip</a> file. To install Chrome extensions that aren't available in the Chrome Web Store, follow these instructions:</p>
-                <ul>
-                    <li>Download the .zip file and extract its contents to a folder.</li>
-                    <li>Open Google Chrome and go to the Extensions page by navigating to <code>chrome://extensions/</code>.</li>
-                    <li>Enable "Developer mode" by toggling the switch in the top right corner.</li>
-                    <li>Click on "Load unpacked" and select the folder where you extracted the extension files.</li>
-                    <li>The extension should now be installed and active.</li>
-                </ul>
+                <p>For <strong>Mac</strong>, download the v126.66 <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Mac/1266941/" class="link">chrome-mac.zip</a> file, extract it, and run the <strong>chrome</strong> app file.</p>
+                <p>For <strong>Windows</strong>, download the v125.277 <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Win/1252758/" class="link">chrome-win.zip</a> file, extract it, and run the <strong>chrome.exe</strong> file.</p>
             </div>
         </div>
 
@@ -258,6 +252,32 @@
                 <p>There is a potential security vulnerability when using older browsers. It is strongly recommended to keep your browser up-to-date to mitigate any risks associated with outdated software.</p>
             </div>
         </div>
+
+        <!-- Dark Reader Installation Instructions -->
+        <div class="message-box darkreader-box">
+            <div class="message-header">
+                <img src="https://images.icanhazchat.com/users/sa/sardistic/cEFJZ.gif" alt="Profile Picture" class="profile-pic">
+                <div>
+                    <a href="https://www.icanhazchat.com/user/sardistic" class="username sardistic">sardistic</a>
+                    <span class="timestamp" id="timestamp5">August 31, 2024 12:04 PM</span>
+                </div>
+            </div>
+            <div class="message-content">
+                <p>If you're trying to use the Dark Reader extension, you'll need to download the <a href="https://github.com/sardistic/darkreader/blob/main/darkreader-chrome.zip" class="link">darkreader-chrome.zip</a> file. Follow these steps to install it:</p>
+                <ul>
+                    <li>Download the ZIP file from the link above.</li>
+                    <li>Extract the ZIP file to a folder on your computer.</li>
+                    <li>Open Chrome and go to <a href="chrome://extensions/" class="link">chrome://extensions/</a>.</li>
+                    <li>Enable "Developer mode" at the top right corner.</li>
+                    <li>Click on "Load unpacked" and select the folder where you extracted the ZIP file.</li>
+                    <li>The Dark Reader extension should now be installed and active.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        sardistic (c) 2024
     </div>
 
     <script>
