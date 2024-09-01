@@ -32,7 +32,7 @@
             background-size: 56px 56px;
             filter: blur(5px);
             z-index: -1;
-            transition: filter 0.1s ease;
+            transition: filter 0.1s ease, transform 0.1s ease;
         }
 
         /* Container */
@@ -243,5 +243,17 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // JavaScript for Background Animation
+        document.addEventListener("mousemove", function(event) {
+            const background = document.querySelector('.background');
+            const { clientX, clientY } = event;
+            const x = (clientX / window.innerWidth - 0.5) * 20; // Adjust intensity
+            const y = (clientY / window.innerHeight - 0.5) * 20; // Adjust intensity
+            background.style.transform = `translate(${x}px, ${y}px)`;
+            background.style.filter = `blur(${Math.abs(x) + Math.abs(y)}px)`; // Blur based on distance from center
+        });
+    </script>
 </body>
 </html>
