@@ -8,12 +8,26 @@
         /* General Styles */
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #4e6e81 25%, #2d3a4b 25%, #2d3a4b 50%, #4e6e81 50%, #4e6e81 75%, #2d3a4b 75%, #2d3a4b 100%);
-            background-size: 56px 56px;
-            animation: backgroundAnimation 10s linear infinite;
+            background: #1c1f23;
             color: #dcddde;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Background Animation */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #1c1f23;
+            background-image: linear-gradient(135deg, #4e6e81 25%, #2d3a4b 25%, #2d3a4b 50%, #4e6e81 50%, #4e6e81 75%, #2d3a4b 75%, #2d3a4b 100%);
+            background-size: 56px 56px;
+            filter: blur(5px);
+            z-index: -1;
+            animation: backgroundAnimation 10s linear infinite;
         }
 
         @keyframes backgroundAnimation {
@@ -26,7 +40,7 @@
         }
 
         .container {
-            width: 80%;
+            width: 60%;
             margin: 0 auto;
             padding: 20px;
         }
@@ -39,8 +53,8 @@
             padding: 10px;
             display: flex;
             flex-direction: column;
-            position: relative;
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+            width: 100%;
         }
 
         .message-header {
@@ -75,8 +89,6 @@
         .message-footer {
             font-size: 12px;
             color: #72767d;
-            display: flex;
-            justify-content: flex-end;
         }
 
         .link {
@@ -89,25 +101,21 @@
         }
 
         /* Profile Box Specific Styles */
-        .profile-box {
+        .profile-box, .download-box, .incident-box {
             background-color: #2f3136;
             border: 1px solid #40444b;
         }
 
-        /* Download Instructions Box Specific Styles */
-        .download-box {
-            background-color: #2f3136;
-            border: 1px solid #40444b;
-        }
-
-        /* Incident Box Specific Styles */
-        .incident-box {
-            background-color: #2f3136;
-            border: 1px solid #40444b;
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #72767d;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
+    <div class="background"></div>
     <div class="container">
         <!-- Profile Box -->
         <div class="message-box profile-box">
@@ -121,32 +129,41 @@
             <div class="message-content">
                 <p>If you're experiencing a "peer connection failed" error when attempting to broadcast your camera, this is a known issue with the recent Chrome 127 update. This problem also affects other Chromium-based browsers such as Edge, Opera, and Brave. As an alternative, you can try using non-Chromium browsers like Firefox or Safari. If you encounter issues with those browsers as well, you can use the standalone version of Chrome provided below. This version doesn't require you to uninstall your current Chrome or go through any installation process.</p>
             </div>
-            <div class="message-footer">
-                <span class="timestamp">August 31, 2024 12:00 PM</span>
-            </div>
         </div>
 
         <!-- Download Instructions Box -->
         <div class="message-box download-box">
+            <div class="message-header">
+                <img src="https://images.icanhazchat.com/users/sa/sardistic/cEFJZ.gif" alt="Profile Picture" class="profile-pic">
+                <div>
+                    <a href="https://www.icanhazchat.com/user/sardistic" class="username">sardistic</a>
+                    <span class="timestamp">August 31, 2024 12:00 PM</span>
+                </div>
+            </div>
             <div class="message-content">
                 <p>For <strong>Mac</strong>, download the <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Mac/1266941/" class="link">chrome-mac-v126.66.zip</a> file, extract it, and run the <strong>chrome</strong> executable.</p>
                 <p>For <strong>Windows</strong>, download the <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Win/1252758/" class="link">chrome-win-v125.277.zip</a> file, extract it, and run the <strong>chrome.exe</strong> file.</p>
-            </div>
-            <div class="message-footer">
-                <span class="timestamp">August 31, 2024 12:00 PM</span>
             </div>
         </div>
 
         <!-- Incident Box -->
         <div class="message-box incident-box">
+            <div class="message-header">
+                <img src="https://images.icanhazchat.com/users/sa/sardistic/cEFJZ.gif" alt="Profile Picture" class="profile-pic">
+                <div>
+                    <a href="https://www.icanhazchat.com/user/sardistic" class="username">sardistic</a>
+                    <span class="timestamp">August 31, 2024 12:00 PM</span>
+                </div>
+            </div>
             <div class="message-content">
                 <p>Incident with Wowza WebRTC Publishing Page - Failing on Chrome Browser Version 127.0.6533.73</p>
                 <a href="https://status.wowza.com/clz2kdat3244008iboeemdk78bv" class="link">Read more</a>
             </div>
-            <div class="message-footer">
-                <span class="timestamp">August 31, 2024 12:00 PM</span>
-            </div>
         </div>
+    </div>
+
+    <div class="footer">
+        <p>sardistic (c) 2024</p>
     </div>
 </body>
 </html>
