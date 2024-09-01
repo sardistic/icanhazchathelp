@@ -153,6 +153,13 @@
             bottom: 0;
             width: 100%;
         }
+
+        /* Reply Box Style */
+        .reply-box {
+            padding-left: 50px; /* Indentation for reply */
+            border-left: 4px solid #7289da; /* Blue left border to indicate a reply */
+            margin-top: -10px; /* Bring it closer to the original message */
+        }
     </style>
 </head>
 <body>
@@ -180,6 +187,9 @@
                     <a href="https://www.icanhazchat.com/user/sardistic" class="username sardistic">sardistic</a>
                     <span class="timestamp" id="timestamp1">August 31, 2024 12:00 PM</span>
                 </div>
+            </div>
+            <div class="reply-box">
+                <span>Replying to <span class="username chatter-username">Chatter</span></span>
             </div>
             <div class="message-content">
                 <p>If you're experiencing a "peer connection failed" error when attempting to broadcast your camera, this is a known issue with the recent Chrome 127 update. This problem also affects other Chromium-based browsers such as Edge, Opera, and Brave.</p>
@@ -218,14 +228,14 @@
         <!-- Incident with Wowzaa Issue Tracking Bot -->
         <div class="message-box incident-box">
             <div class="message-header">
-                <img src="https://images.icanhazchat.com/users/sa/wowzaa/issues/security_robot.png" alt="Profile Picture" class="profile-pic">
+                <img src="https://images.icanhazchat.com/users/bots/security_robot.png" alt="Profile Picture" class="profile-pic">
                 <div>
                     <span class="username bot">Wowzaa Issue Tracking</span>
                     <span class="timestamp" id="timestamp3">August 31, 2024 12:02 PM</span>
                 </div>
             </div>
             <div class="message-content">
-                <p>Thank you for reporting the issue <strong>sardistic</strong>. This problem is currently being tracked under Incident #54321 and will be prioritized based on its severity and impact.</p>
+                <p><strong>Incident with Wowza WebRTC Publishing Page:</strong> Users are experiencing failures on Chrome Browser Version 127.0.6533.73. <a href="https://status.wowza.com/clz2kdat3244008iboeemdk78bv" class="link">More details here</a>.</p>
             </div>
         </div>
 
