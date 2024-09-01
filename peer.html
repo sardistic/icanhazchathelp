@@ -13,6 +13,11 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            cursor: none; /* Hide cursor for custom background effect */
         }
 
         /* Background Animation */
@@ -30,9 +35,10 @@
             transition: filter 0.3s ease;
         }
 
-        /* Responsive container */
+        /* Container */
         .container {
-            width: 60%;
+            width: 100%;
+            max-width: 800px; /* Limit max width */
             margin: 0 auto;
             padding: 20px;
             position: relative;
@@ -48,8 +54,7 @@
             display: flex;
             flex-direction: column;
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-            width: 90%; /* Narrower boxes */
-            max-width: 600px; /* Limit max width */
+            width: 100%; /* Full width of container */
         }
 
         .message-header {
@@ -96,9 +101,16 @@
         }
 
         /* Profile Box Specific Styles */
-        .profile-box, .download-box, .incident-box, .security-box {
+        .profile-box, .download-box, .incident-box, .security-box, .chatter-box {
             background-color: #2f3136;
             border: 1px solid #40444b;
+        }
+
+        /* Chatter Box Style */
+        .chatter-box {
+            background-color: #3a3c3e; /* Slightly different color */
+            border: 1px solid #4b4d4f;
+            margin-top: 20px; /* Space above the chatter box */
         }
 
         .footer {
@@ -115,6 +127,20 @@
 <body>
     <div class="background"></div>
     <div class="container">
+        <!-- Chatter Box -->
+        <div class="message-box chatter-box">
+            <div class="message-header">
+                <img src="https://images.icanhazchat.com/users/sa/sardistic/cEFJZ.gif" alt="Profile Picture" class="profile-pic">
+                <div>
+                    <span class="username">Chatter</span>
+                    <span class="timestamp" id="timestamp0">August 31, 2024 11:55 AM</span>
+                </div>
+            </div>
+            <div class="message-content">
+                <p>I can't cam up, I got peer error</p>
+            </div>
+        </div>
+
         <!-- Profile Box -->
         <div class="message-box profile-box">
             <div class="message-header">
