@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chrome Download Links</title>
+    <title>Sardistic Profile Message</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,7 +15,6 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            text-align: center;
             overflow: hidden;
         }
         .container {
@@ -25,18 +24,42 @@
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
             z-index: 2;
-            position: relative;
+            display: flex;
+            flex-direction: column;
         }
-        h1 {
-            color: #2196F3;
-            font-size: 24px;
+        .profile {
+            display: flex;
+            align-items: center;
             margin-bottom: 20px;
         }
-        p {
-            font-size: 16px;
-            line-height: 1.6;
+        .profile img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
         }
-        .blurb {
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .profile-info h2 {
+            font-size: 18px;
+            margin: 0;
+            color: #2196F3;
+        }
+        .profile-info h2 a {
+            color: #2196F3;
+            text-decoration: none;
+        }
+        .profile-info h2 a:hover {
+            text-decoration: underline;
+        }
+        .profile-info .bio {
+            font-size: 12px;
+            color: #B0B0B0;
+            margin-top: 5px;
+        }
+        .message {
             background-color: #333;
             padding: 15px;
             border-radius: 5px;
@@ -109,28 +132,38 @@
 <body>
     <div class="background"></div>
     <div class="container">
-        <h1>Chrome Download Links</h1>
-        
-        <div class="blurb">
+        <div class="profile">
+            <img src="https://images.icanhazchat.com/users/sa/sardistic/cEFJZ.gif" alt="Profile Picture">
+            <div class="profile-info">
+                <h2><a href="https://www.icanhazchat.com/user/sardistic" target="_blank">sardistic</a></h2>
+                <div class="bio">
+                    Breaking hearts since: December 2010<br>
+                    Last seen: 3 hours ago<br>
+                    Karma: 51507
+                </div>
+            </div>
+        </div>
+
+        <div class="message">
             <p>If you're encountering the peer connection error while attempting to cam up, this is a known issue with the recent Chrome 127 update that also affects Chromium-based browsers like Edge, Opera, and Brave. You can try non-Chromium browsers such as Firefox, Safari, or Internet Explorer. If you have issues with those browsers, you can attempt a standalone version of Chrome below. These do not require uninstalling your current Chrome or any installation.</p>
-        </div>
 
-        <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Mac/1266941/" download>Download Chrome for Mac</a>
-        <p>1. Download the <code>chrome.zip</code> file.</p>
-        <p>2. Extract the contents.</p>
-        <p>3. Run <code>chrome.app</code> (no installation required).</p>
+            <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Mac/1266941/" download>Download Chrome for Mac</a>
+            <p>1. Download the <code>chrome.zip</code> file.</p>
+            <p>2. Extract the contents.</p>
+            <p>3. Run <code>chrome.app</code> (no installation required).</p>
 
-        <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Win/1252758/" download>Download Chrome for Windows</a>
-        <p>1. Download the <code>chrome-win.zip</code> file.</p>
-        <p>2. Extract the contents.</p>
-        <p>3. Run <code>chrome.exe</code> (no installation required).</p>
+            <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Win/1252758/" download>Download Chrome for Windows</a>
+            <p>1. Download the <code>chrome-win.zip</code> file.</p>
+            <p>2. Extract the contents.</p>
+            <p>3. Run <code>chrome.exe</code> (no installation required).</p>
 
-        <div class="disclaimer">
-            <p><strong>Security Notice:</strong> Using older browsers can expose you to security vulnerabilities. These standalone versions of Chrome are provided for testing purposes only and are not recommended for regular use.</p>
-        </div>
+            <div class="disclaimer">
+                <p><strong>Security Notice:</strong> Using older browsers can expose you to security vulnerabilities. These standalone versions of Chrome are provided for testing purposes only and are not recommended for regular use.</p>
+            </div>
 
-        <div class="incident">
-            <p><strong>Incident with Wowza WebRTC Publishing Page:</strong> Users are experiencing failures on Chrome Browser Version 127.0.6533.73. <a href="https://status.wowza.com/clz2kdat3244008iboeemdk78bv" target="_blank">Read more</a></p>
+            <div class="incident">
+                <p><strong>Incident with Wowza WebRTC Publishing Page:</strong> Users are experiencing failures on Chrome Browser Version 127.0.6533.73. <a href="https://status.wowza.com/clz2kdat3244008iboeemdk78bv" target="_blank">Read more</a></p>
+            </div>
         </div>
 
         <footer>
