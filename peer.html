@@ -13,6 +13,7 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+            cursor: none;
         }
 
         /* Background Animation */
@@ -22,12 +23,12 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: #1c1f23;
-            background-image: linear-gradient(135deg, #4e6e81 25%, #2d3a4b 25%, #2d3a4b 50%, #4e6e81 50%, #4e6e81 75%, #2d3a4b 75%, #2d3a4b 100%);
+            background: #2c2f33;
+            background-image: linear-gradient(135deg, #3b3f43 25%, #1c1f23 25%, #1c1f23 50%, #3b3f43 50%, #3b3f43 75%, #1c1f23 75%, #1c1f23 100%);
             background-size: 56px 56px;
             filter: blur(5px);
             z-index: -1;
-            animation: backgroundAnimation 10s linear infinite;
+            transition: filter 0.3s ease;
         }
 
         @keyframes backgroundAnimation {
@@ -39,6 +40,7 @@
             }
         }
 
+        /* Responsive container */
         .container {
             width: 60%;
             margin: 0 auto;
@@ -103,7 +105,7 @@
         }
 
         /* Profile Box Specific Styles */
-        .profile-box, .download-box, .incident-box {
+        .profile-box, .download-box, .incident-box, .security-box {
             background-color: #2f3136;
             border: 1px solid #40444b;
         }
@@ -125,7 +127,7 @@
                 <img src="https://images.icanhazchat.com/users/sa/sardistic/cEFJZ.gif" alt="Profile Picture" class="profile-pic">
                 <div>
                     <a href="https://www.icanhazchat.com/user/sardistic" class="username">sardistic</a>
-                    <span class="timestamp">August 31, 2024 12:00 PM</span>
+                    <span class="timestamp" id="timestamp1">August 31, 2024 12:00 PM</span>
                 </div>
             </div>
             <div class="message-content">
@@ -139,7 +141,7 @@
                 <img src="https://images.icanhazchat.com/users/sa/sardistic/cEFJZ.gif" alt="Profile Picture" class="profile-pic">
                 <div>
                     <a href="https://www.icanhazchat.com/user/sardistic" class="username">sardistic</a>
-                    <span class="timestamp">August 31, 2024 12:00 PM</span>
+                    <span class="timestamp" id="timestamp2">August 31, 2024 12:05 PM</span>
                 </div>
             </div>
             <div class="message-content">
@@ -154,12 +156,26 @@
                 <img src="https://images.icanhazchat.com/users/sa/sardistic/cEFJZ.gif" alt="Profile Picture" class="profile-pic">
                 <div>
                     <a href="https://www.icanhazchat.com/user/sardistic" class="username">sardistic</a>
-                    <span class="timestamp">August 31, 2024 12:00 PM</span>
+                    <span class="timestamp" id="timestamp3">August 31, 2024 12:10 PM</span>
                 </div>
             </div>
             <div class="message-content">
                 <p>Incident with Wowza WebRTC Publishing Page - Failing on Chrome Browser Version 127.0.6533.73</p>
                 <a href="https://status.wowza.com/clz2kdat3244008iboeemdk78bv" class="link">Read more</a>
+            </div>
+        </div>
+
+        <!-- Security Warning Box -->
+        <div class="message-box security-box">
+            <div class="message-header">
+                <img src="https://images.icanhazchat.com/users/sa/sardistic/cEFJZ.gif" alt="Profile Picture" class="profile-pic">
+                <div>
+                    <a href="https://www.icanhazchat.com/user/sardistic" class="username">sardistic</a>
+                    <span class="timestamp" id="timestamp4">August 31, 2024 12:15 PM</span>
+                </div>
+            </div>
+            <div class="message-content">
+                <p>Using older browsers can expose you to security vulnerabilities. These standalone versions of Chrome are provided for testing purposes only and are not recommended for regular use.</p>
             </div>
         </div>
     </div>
@@ -181,6 +197,17 @@
         }
 
         scrollTitle();
+
+        // JavaScript for background animation based on mouse position
+        document.addEventListener('mousemove', function(event) {
+            const x = event.clientX;
+            const y = event.clientY;
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+            const distance = Math.sqrt(Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2));
+            const blur = Math.min(distance / 20, 10); // Adjust blur intensity
+            document.querySelector('.background').style.filter = `blur(${blur}px)`;
+        });
     </script>
 </body>
 </html>
