@@ -80,6 +80,30 @@
             margin-right: 10px;
         }
 
+        .username.sardistic {
+            color: #7D3C98; /* Warlock purple color */
+        }
+
+        .username.bot {
+            color: #7289da; /* Bot blue color */
+            position: relative;
+        }
+
+        .username.bot::after {
+            content: 'BOT';
+            background-color: #5865f2;
+            color: white;
+            font-size: 10px;
+            border-radius: 3px;
+            padding: 2px 4px;
+            margin-left: 4px;
+            vertical-align: middle;
+        }
+
+        .username.knowitall {
+            color: #7289da; /* Bot blue color */
+        }
+
         .chatter-username {
             color: #b0b0b0; /* Slightly less white */
         }
@@ -148,17 +172,31 @@
             </div>
         </div>
 
-        <!-- Profile Box -->
+        <!-- Replying to Chatter -->
         <div class="message-box profile-box">
             <div class="message-header">
                 <img src="https://images.icanhazchat.com/users/sa/sardistic/cEFJZ.gif" alt="Profile Picture" class="profile-pic">
                 <div>
-                    <a href="https://www.icanhazchat.com/user/sardistic" class="username">sardistic</a>
+                    <a href="https://www.icanhazchat.com/user/sardistic" class="username sardistic">sardistic</a>
                     <span class="timestamp" id="timestamp1">August 31, 2024 12:00 PM</span>
                 </div>
             </div>
             <div class="message-content">
-                <p>If you're experiencing a "peer connection failed" error when attempting to broadcast your camera, this is a known issue with the recent Chrome 127 update. This problem also affects other Chromium-based browsers such as Edge, Opera, and Brave. As an alternative, you can try using non-Chromium browsers like Firefox or Safari. If you encounter issues with those browsers as well, you can use the standalone version of Chrome provided below. This version doesn't require you to uninstall your current Chrome or go through any installation process.</p>
+                <p>If you're experiencing a "peer connection failed" error when attempting to broadcast your camera, this is a known issue with the recent Chrome 127 update. This problem also affects other Chromium-based browsers such as Edge, Opera, and Brave.</p>
+            </div>
+        </div>
+
+        <!-- Alternative Suggestion -->
+        <div class="message-box profile-box">
+            <div class="message-header">
+                <img src="https://images.icanhazchat.com/users/sa/sardistic/cEFJZ.gif" alt="Profile Picture" class="profile-pic">
+                <div>
+                    <a href="https://www.icanhazchat.com/user/sardistic" class="username sardistic">sardistic</a>
+                    <span class="timestamp" id="timestamp1">August 31, 2024 12:00 PM</span>
+                </div>
+            </div>
+            <div class="message-content">
+                <p>As an alternative, you can try using non-Chromium browsers like Firefox or Safari. If you encounter issues with those browsers as well, you can use the standalone version of Chrome provided below. This version doesn't require you to uninstall your current Chrome or go through any installation process.</p>
             </div>
         </div>
 
@@ -167,7 +205,7 @@
             <div class="message-header">
                 <img src="https://images.icanhazchat.com/users/sa/sardistic/cEFJZ.gif" alt="Profile Picture" class="profile-pic">
                 <div>
-                    <a href="https://www.icanhazchat.com/user/sardistic" class="username">sardistic</a>
+                    <a href="https://www.icanhazchat.com/user/sardistic" class="username sardistic">sardistic</a>
                     <span class="timestamp" id="timestamp2">August 31, 2024 12:01 PM</span>
                 </div>
             </div>
@@ -177,63 +215,33 @@
             </div>
         </div>
 
-        <!-- Incident Box -->
+        <!-- Incident with Wowza Issue Tracking Bot -->
         <div class="message-box incident-box">
             <div class="message-header">
-                <img src="https://images.icanhazchat.com/users/sa/sardistic/cEFJZ.gif" alt="Profile Picture" class="profile-pic">
+                <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp" alt="Profile Picture" class="profile-pic">
                 <div>
-                    <a href="https://www.icanhazchat.com/user/sardistic" class="username">sardistic</a>
+                    <span class="username bot">Wowzaa Issue Tracking</span>
                     <span class="timestamp" id="timestamp3">August 31, 2024 12:02 PM</span>
                 </div>
             </div>
             <div class="message-content">
-                <p>Incident with Wowza WebRTC Publishing Page - Failing on Chrome Browser Version 127.0.6533.73</p>
-                <a href="https://status.wowza.com/clz2kdat3244008iboeemdk78bv" class="link">Read more</a>
+                <p>Thank you for reporting the issue <strong>sardistic</strong>. This problem is currently being tracked under Incident #54321 and will be prioritized based on its severity and impact.</p>
             </div>
         </div>
 
-        <!-- Security Warning Box -->
+        <!-- Security Vulnerability Box -->
         <div class="message-box security-box">
             <div class="message-header">
                 <img src="https://images.icanhazchat.com/users/sa/sardistic/cEFJZ.gif" alt="Profile Picture" class="profile-pic">
                 <div>
-                    <a href="https://www.icanhazchat.com/user/sardistic" class="username">sardistic</a>
-                    <span class="timestamp" id="timestamp4">August 31, 2024 12:15 PM</span>
+                    <a href="https://www.icanhazchat.com/user/sardistic" class="username sardistic">sardistic</a>
+                    <span class="timestamp" id="timestamp4">August 31, 2024 12:03 PM</span>
                 </div>
             </div>
             <div class="message-content">
-                <p>Using older browsers can expose you to security vulnerabilities. These standalone versions of Chrome are provided for testing purposes only and are not recommended for regular use.</p>
+                <p>There is a potential security vulnerability when using older browsers. It is strongly recommended to keep your browser up-to-date to mitigate any risks associated with outdated software.</p>
             </div>
         </div>
     </div>
-
-    <div class="footer">
-        sardistic (c) 2024
-    </div>
-
-    <script>
-        // JavaScript for scrolling title
-        let originalTitle = document.title;
-        let scrollingText = "New Message from Sardistic: Peer Connection Failed help ";
-
-        function scrollTitle() {
-            document.title = scrollingText + originalTitle;
-            scrollingText = scrollingText.substring(1) + scrollingText.charAt(0);
-            setTimeout(scrollTitle, 150); // Adjust speed of scrolling
-        }
-
-        scrollTitle();
-
-        // JavaScript for background animation based on mouse position
-        document.addEventListener('mousemove', function(event) {
-            const x = event.clientX;
-            const y = event.clientY;
-            const centerX = window.innerWidth / 2;
-            const centerY = window.innerHeight / 2;
-            const distance = Math.sqrt(Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2));
-            const blur = Math.min(distance / 30, 8); // Adjust blur intensity
-            document.querySelector('.background').style.filter = `blur(${blur}px)`;
-        });
-    </script>
 </body>
 </html>
