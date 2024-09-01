@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #101010;
+            background-color: #0D0D0D;
             color: #E0E0E0;
             margin: 0;
             padding: 0;
@@ -27,11 +27,18 @@
             z-index: 2;
             display: flex;
             flex-direction: column;
+            transition: transform 0.2s ease;
+        }
+        .container:hover {
+            transform: scale(1.05);
         }
         .profile {
             display: flex;
             align-items: center;
             margin-bottom: 20px;
+            padding: 10px;
+            background-color: #2C2C2C;
+            border-radius: 5px;
         }
         .profile img {
             width: 60px;
@@ -68,7 +75,7 @@
             color: #E0E0E0;
             text-align: left;
         }
-        a {
+        .download-link {
             display: inline-block;
             margin: 10px 0;
             padding: 10px 20px;
@@ -78,8 +85,9 @@
             border-radius: 5px;
             text-decoration: none;
             transition: background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
-        a:hover {
+        .download-link:hover {
             background-color: #2980B9;
         }
         .disclaimer {
@@ -111,16 +119,16 @@
             font-size: 12px;
             color: #777;
         }
-        /* Subtle Moving Background Animation */
+        /* Enhanced Moving Background Animation */
         .background {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, #101010, #1A1A1A, #101010);
-            background-size: 400% 400%;
-            animation: gradientShift 10s ease infinite;
+            background: linear-gradient(135deg, #1A1A1A, #333, #1A1A1A);
+            background-size: 200% 200%;
+            animation: gradientShift 4s ease infinite;
             z-index: 1;
         }
         @keyframes gradientShift {
@@ -148,12 +156,12 @@
         <div class="message">
             <p>If you're encountering the peer connection error while attempting to cam up, this is a known issue with the recent Chrome 127 update that also affects Chromium-based browsers like Edge, Opera, and Brave. You can try non-Chromium browsers such as Firefox, Safari, or Internet Explorer. If you have issues with those browsers, you can attempt a standalone version of Chrome below. These do not require uninstalling your current Chrome or any installation.</p>
 
-            <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Mac/1266941/" download>Download Chrome for Mac</a>
+            <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Mac/1266941/" class="download-link" download>Download Chrome for Mac</a>
             <p>1. Download the <code>chrome.zip</code> file.</p>
             <p>2. Extract the contents.</p>
             <p>3. Run <code>chrome.app</code> (no installation required).</p>
 
-            <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Win/1252758/" download>Download Chrome for Windows</a>
+            <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Win/1252758/" class="download-link" download>Download Chrome for Windows</a>
             <p>1. Download the <code>chrome-win.zip</code> file.</p>
             <p>2. Extract the contents.</p>
             <p>3. Run <code>chrome.exe</code> (no installation required).</p>
@@ -163,7 +171,7 @@
             </div>
 
             <div class="incident">
-                <p><strong>Incident with Wowza WebRTC Publishing Page:</strong> Users are experiencing failures on Chrome Browser Version 127.0.6533.73. <a href="https://status.wowza.com/clz2kdat3244008iboeemdk78bv" target="_blank">Read more</a></p>
+                <p><strong>Incident with Wowza WebRTC Publishing Page:</strong> Users are experiencing failures on Chrome Browser Version 127.0.6533.73. <a href="https://status.wowza.com/clz2kdat3244008iboeemdk78bv" target="_blank">More details here</a></p>
             </div>
         </div>
 
