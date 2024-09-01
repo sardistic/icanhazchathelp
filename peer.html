@@ -17,7 +17,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            cursor: none; /* Hide cursor for custom background effect */
+            cursor: auto; /* Ensure cursor is visible */
         }
 
         /* Background Animation */
@@ -43,6 +43,7 @@
             padding: 20px;
             position: relative;
             top: 60px; /* Adjust for scrolling title */
+            text-align: center; /* Center the content */
         }
 
         /* Message Box Styles */
@@ -55,6 +56,8 @@
             flex-direction: column;
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
             width: 100%; /* Full width of container */
+            text-align: left; /* Align text to left */
+            position: relative; /* Ensure positioning for timestamps */
         }
 
         .message-header {
@@ -205,14 +208,14 @@
     </div>
 
     <div class="footer">
-        <p>sardistic (c) 2024</p>
+        sardistic (c) 2024
     </div>
 
     <script>
-        // JavaScript for scrolling tab title
-        let originalTitle = "Peer Connection Failed";
+        // JavaScript for scrolling title
+        let originalTitle = document.title;
         let scrollingText = "New Message from Sardistic: Peer Connection Failed help ";
-        
+
         function scrollTitle() {
             document.title = scrollingText + originalTitle;
             scrollingText = scrollingText.substring(1) + scrollingText.charAt(0);
