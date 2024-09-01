@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peer Connection Failed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0D0D0D;
+            color: #E0E0E0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #1A1A1A;
+            z-index: 1;
+            overflow: hidden;
+        }
+        .background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                135deg,
+                #2C2C2C 0px,
+                #2C2C2C 2px,
+                transparent 2px,
+                transparent 4px
+            );
+            filter: blur(10px);
+            transition: filter 0.2s ease;
+        }
+        .background:hover::before {
+            filter: blur(2px);
+        }
+        .container {
+            max-width: 600px;
+            background-color: #1A1A1A;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease;
+        }
+        .container:hover {
+            transform: scale(1.05);
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #2C2C2C;
+            border-radius: 5px;
+        }
+        .profile img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .profile-info h2 {
+            font-size: 18px;
+            margin: 0;
+            color: #F8C471;
+        }
+        .profile-info h2 a {
+            color: #F8C471;
+            text-decoration: none;
+        }
+        .profile-info h2 a:hover {
+            text-decoration: underline;
+        }
+        .profile-info .bio {
+            font-size: 12px;
+            color: #B0B0B0;
+            margin-top: 5px;
+        }
+        .message {
+            background-color: #333;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            color: #E0E0E0;
+            text-align: left;
+            position: relative;
+        }
+        .timestamp {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: #888;
+        }
+        .info-blurb {
+            background-color: #2C2C2C;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .download-link {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #3498DB;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .download-link:hover {
+            background-color: #2980B9;
+        }
+        .disclaimer {
+            background-color: #2C2C2C;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            color: #B0B0B0;
+            margin-top: 20px;
+        }
+        .incident {
+            margin-top: 20px;
+            font-size: 14px;
+            background-color: #444;
+            padding: 15px;
+            border-radius: 5px;
+            color: #E0E0E0;
+            text-align: left;
+        }
+        .incident a {
+            color: #F8C471;
+            text-decoration: none;
+        }
+        .incident a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <div class="profile">
+            <img src="https://images.icanhazchat.com/users/sa/sardistic/cEFJZ.gif" alt="Profile Picture">
+            <div class="profile-info">
+                <h2><a href="https://www.icanhazchat.com/user/sardistic" target="_blank">sardistic</a></h2>
+                <div class="bio">
+                    Breaking hearts since: December 2010<br>
+                    Last seen: 3 hours ago<br>
+                    Karma: 51507
+                </div>
+            </div>
+        </div>
+
+        <div class="info-blurb">
+            <p>If you're experiencing a "peer connection failed" error when attempting to broadcasting your camera in a room, this is a known issue with the recent Chrome 127 update. This problem also affects other Chromium-based browsers such as Edge, Opera, and Brave. As an alternative, you can try using non-Chromium browsers like Firefox, or Safari. If you encounter issues with those browsers as well, you can use the standalone version of Chrome provided below. This version doesn't require you to uninstall your current Chrome or go through any installation process.</p>
+            <div class="timestamp">August 31, 2024, 12:45 PM</div>
+        </div>
+
+        <div class="message">
+            <p>Navigate to either the Mac or Windows links bellow from an official Chrome snapshot repository</p>
+            <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Mac/1266941/" class="download-link" download>Download Chrome v126.66 for Mac</a>
+            <p>1. Download the <code>chrome-mac.zip</code> file.</p>
+            <p>2. Extract the contents.</p>
+            <p>3. Run <code>chrome.app</code> (no installation required).</p>
+
+            <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Win/1252758/" class="download-link" download>Download Chrome v 125.27 for Windows</a>
+            <p>1. Download the <code>chrome-win.zip</code> file.</p>
+            <p>2. Extract the contents.</p>
+            <p>3. Run <code>chrome.exe</code> (no installation required).</p>
+
+            <div class="timestamp">August 31, 2024, 12:50 PM</div>
+
+            <div class="disclaimer">
+                <p><strong>Security Notice:</strong> Using older browsers can expose you to security vulnerabilities. These standalone versions of Chrome are provided for testing purposes only and are not recommended for regular use.</p>
+            </div>
+
+            <div class="incident">
+                <p><strong>Incident with Wowza WebRTC Publishing Page:</strong> Users are experiencing failures on Chrome Browser Version 127.0.6533.73. <a href="https://status.wowza.com/clz2kdat3244008iboeemdk78bv" target="_blank">More details here</a></p>
+            </div>
+        </div>
+
+        <footer>
+            <p>sardistic &copy; 2024</p>
+        </footer>
+    </div>
+</body>
+</html>
