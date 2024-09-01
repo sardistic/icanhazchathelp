@@ -77,6 +77,10 @@
             margin-right: 10px;
         }
 
+        .chatter-username {
+            color: #b0b0b0; /* Slightly less white */
+        }
+
         .timestamp {
             color: #72767d;
             font-size: 12px;
@@ -130,9 +134,9 @@
         <!-- Chatter Box -->
         <div class="message-box chatter-box">
             <div class="message-header">
-                <img src="https://images.icanhazchat.com/users/sa/sardistic/cEFJZ.gif" alt="Profile Picture" class="profile-pic">
+                <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp" alt="Profile Picture" class="profile-pic">
                 <div>
-                    <span class="username">Chatter</span>
+                    <span class="username chatter-username">Chatter</span>
                     <span class="timestamp" id="timestamp0">August 31, 2024 11:55 AM</span>
                 </div>
             </div>
@@ -208,8 +212,7 @@
         // JavaScript for scrolling tab title
         let originalTitle = "Peer Connection Failed";
         let scrollingText = "New Message from Sardistic: Peer Connection Failed help ";
-        let titleElement = document.title;
-
+        
         function scrollTitle() {
             document.title = scrollingText + originalTitle;
             scrollingText = scrollingText.substring(1) + scrollingText.charAt(0);
