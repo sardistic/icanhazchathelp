@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #121212;
+            background-color: #101010;
             color: #E0E0E0;
             margin: 0;
             padding: 0;
@@ -16,13 +16,14 @@
             align-items: center;
             height: 100vh;
             overflow: hidden;
+            position: relative;
         }
         .container {
             max-width: 600px;
-            background-color: #1E1E1E;
+            background-color: #1A1A1A;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             z-index: 2;
             display: flex;
             flex-direction: column;
@@ -45,10 +46,10 @@
         .profile-info h2 {
             font-size: 18px;
             margin: 0;
-            color: #2196F3;
+            color: #F8C471;
         }
         .profile-info h2 a {
-            color: #2196F3;
+            color: #F8C471;
             text-decoration: none;
         }
         .profile-info h2 a:hover {
@@ -73,16 +74,16 @@
             padding: 10px 20px;
             font-size: 16px;
             color: #fff;
-            background-color: #2196F3;
+            background-color: #3498DB;
             border-radius: 5px;
             text-decoration: none;
             transition: background-color 0.3s;
         }
         a:hover {
-            background-color: #1976D2;
+            background-color: #2980B9;
         }
         .disclaimer {
-            background-color: #282828;
+            background-color: #2C2C2C;
             padding: 10px;
             border-radius: 5px;
             font-size: 12px;
@@ -92,14 +93,14 @@
         .incident {
             margin-top: 20px;
             font-size: 14px;
-            background-color: #282828;
+            background-color: #444;
             padding: 15px;
             border-radius: 5px;
             color: #E0E0E0;
             text-align: left;
         }
         .incident a {
-            color: #2196F3;
+            color: #F8C471;
             text-decoration: none;
         }
         .incident a:hover {
@@ -110,22 +111,22 @@
             font-size: 12px;
             color: #777;
         }
-        /* Mouse-reactive Background Animation */
+        /* Subtle Moving Background Animation */
         .background {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at center, #2196F3, #1E1E1E);
+            background: linear-gradient(45deg, #101010, #1A1A1A, #101010);
+            background-size: 400% 400%;
+            animation: gradientShift 10s ease infinite;
             z-index: 1;
         }
-        .background:hover {
-            animation: none;
-        }
-        @keyframes moveGradient {
-            0% { background-position: 50% 50%; }
-            100% { background-position: calc(var(--mouseX) * 1%) calc(var(--mouseY) * 1%); }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
     </style>
 </head>
@@ -170,16 +171,5 @@
             <p>Brought to you by Sardistic &copy; 2024</p>
         </footer>
     </div>
-
-    <script>
-        const background = document.querySelector('.background');
-        document.addEventListener('mousemove', (e) => {
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
-            background.style.setProperty('--mouseX', x * 100);
-            background.style.setProperty('--mouseY', y * 100);
-            background.style.animation = 'moveGradient 0.1s ease-in-out forwards';
-        });
-    </script>
 </body>
 </html>
