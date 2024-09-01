@@ -13,7 +13,7 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            cursor: none;
+            cursor: none; /* Hide cursor for custom background effect */
         }
 
         /* Background Animation */
@@ -26,18 +26,9 @@
             background: #2c2f33;
             background-image: linear-gradient(135deg, #3b3f43 25%, #1c1f23 25%, #1c1f23 50%, #3b3f43 50%, #3b3f43 75%, #1c1f23 75%, #1c1f23 100%);
             background-size: 56px 56px;
-            filter: blur(5px);
+            filter: blur(3px);
             z-index: -1;
             transition: filter 0.3s ease;
-        }
-
-        @keyframes backgroundAnimation {
-            from {
-                background-position: 0 0;
-            }
-            to {
-                background-position: 56px 56px;
-            }
         }
 
         /* Responsive container */
@@ -58,7 +49,8 @@
             display: flex;
             flex-direction: column;
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-            width: 100%;
+            width: 90%; /* Narrower boxes */
+            max-width: 600px; /* Limit max width */
         }
 
         .message-header {
@@ -115,6 +107,9 @@
             margin-top: 20px;
             color: #72767d;
             font-size: 14px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
@@ -205,7 +200,7 @@
             const centerX = window.innerWidth / 2;
             const centerY = window.innerHeight / 2;
             const distance = Math.sqrt(Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2));
-            const blur = Math.min(distance / 20, 10); // Adjust blur intensity
+            const blur = Math.min(distance / 10, 10); // Adjust blur intensity
             document.querySelector('.background').style.filter = `blur(${blur}px)`;
         });
     </script>
