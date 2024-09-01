@@ -43,6 +43,8 @@
             width: 60%;
             margin: 0 auto;
             padding: 20px;
+            position: relative;
+            top: 60px; /* Adjust for scrolling title */
         }
 
         /* Message Box Styles */
@@ -165,5 +167,20 @@
     <div class="footer">
         <p>sardistic (c) 2024</p>
     </div>
+
+    <script>
+        // JavaScript for scrolling tab title
+        let originalTitle = "Peer Connection Failed";
+        let scrollingText = "New Message from Sardistic: Peer Connection Failed help ";
+        let titleElement = document.title;
+
+        function scrollTitle() {
+            document.title = scrollingText + originalTitle;
+            scrollingText = scrollingText.substring(1) + scrollingText.charAt(0);
+            setTimeout(scrollTitle, 150); // Adjust speed of scrolling
+        }
+
+        scrollTitle();
+    </script>
 </body>
 </html>
