@@ -12,7 +12,7 @@
             color: #dcddde;
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
+            overflow: hidden; /* Prevent scrolling */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -39,11 +39,14 @@
         .container {
             width: 100%;
             max-width: 800px; /* Limit max width */
-            margin: 0 auto;
+            height: 100vh; /* Full height of viewport */
+            overflow-y: auto; /* Allow vertical scrolling if necessary */
+            margin: 0;
             padding: 20px;
             position: relative;
-            top: 60px; /* Adjust for scrolling title */
             text-align: center; /* Center the content */
+            background-color: rgba(44, 47, 51, 0.9); /* Slightly transparent background */
+            border-radius: 10px; /* Rounded corners */
         }
 
         /* Message Box Styles */
@@ -58,6 +61,8 @@
             width: 100%; /* Full width of container */
             text-align: left; /* Align text to left */
             position: relative; /* Ensure positioning for timestamps */
+            max-height: 130px; /* Limit height of each message box */
+            overflow: hidden; /* Hide overflow content */
         }
 
         .message-header {
@@ -132,7 +137,7 @@
         }
 
         /* Profile Box Specific Styles */
-        .profile-box, .download-box, .incident-box, .security-box, .chatter-box {
+        .profile-box, .download-box, .incident-box, .security-box, .darkreader-box {
             background-color: #2f3136;
             border: 1px solid #40444b;
         }
@@ -220,8 +225,8 @@
                 </div>
             </div>
             <div class="message-content">
-                <p>For <strong>Mac</strong>, download the v126.66 <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Mac/1266941/" class="link">chrome-mac.zip</a> file, extract it, and run the <strong>chrome</strong> app file.</p>
-                <p>For <strong>Windows</strong>, download the v125.277 <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Win/1252758/" class="link">chrome-win.zip</a> file, extract it, and run the <strong>chrome.exe</strong> file.</p>
+                <p>For <strong>Mac</strong>, download the v126.66 <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Mac/1266941/" class="link">chrome-mac.zip</a> file, extract it, and run the <strong>chrome</strong> application inside the extracted folder.</p>
+                <p>For <strong>Windows</strong>, download the v126.66 <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Win_x64/1266941/" class="link">chrome-win32.zip</a> file, extract it, and run the <strong>chrome.exe</strong> application inside the extracted folder.</p>
             </div>
         </div>
 
