@@ -13,7 +13,6 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            cursor: none; /* Hide cursor for custom background effect */
         }
 
         /* Background Animation */
@@ -26,7 +25,7 @@
             background: #2c2f33;
             background-image: linear-gradient(135deg, #3b3f43 25%, #1c1f23 25%, #1c1f23 50%, #3b3f43 50%, #3b3f43 75%, #1c1f23 75%, #1c1f23 100%);
             background-size: 56px 56px;
-            filter: blur(3px);
+            filter: blur(5px);
             z-index: -1;
             transition: filter 0.3s ease;
         }
@@ -200,7 +199,7 @@
             const centerX = window.innerWidth / 2;
             const centerY = window.innerHeight / 2;
             const distance = Math.sqrt(Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2));
-            const blur = Math.min(distance / 10, 10); // Adjust blur intensity
+            const blur = Math.min(distance / 30, 8); // Adjust blur intensity
             document.querySelector('.background').style.filter = `blur(${blur}px)`;
         });
     </script>
