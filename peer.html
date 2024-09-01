@@ -48,6 +48,7 @@
             gap: 10px; /* Space between message boxes */
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
             position: relative;
+            overflow: hidden; /* Prevent scrolling */
         }
 
         /* Message Box Styles */
@@ -58,8 +59,7 @@
             display: flex;
             flex-direction: column;
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-            max-height: 150px; /* Limit height of each message box */
-            overflow: auto; /* Scroll within the box if content exceeds height */
+            flex: 1; /* Allow message boxes to grow and shrink */
         }
 
         .message-header {
@@ -117,6 +117,7 @@
 
         .message-content {
             margin-bottom: 10px;
+            flex: 1; /* Allow content to grow and fit space */
         }
 
         .message-footer {
@@ -214,7 +215,7 @@
             </div>
             <div class="message-content">
                 <p>For <strong>Mac</strong>, download the v126.66 <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Mac/1266941/" class="link">chrome-mac.zip</a> file, extract it, and run the <strong>chrome</strong> application inside the extracted folder.</p>
-                <p>For <strong>Windows</strong>, download the v126.66 <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Win_x64/1266941/" class="link">chrome-win32.zip</a> file, extract it, and run the <strong>chrome.exe</strong> application inside the extracted folder.</p>
+                <p>For <strong>Windows</strong>, download the v126.66 <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Win/1266941/" class="link">chrome-win.zip</a> file, extract it, and run the <strong>chrome.exe</strong> application inside the extracted folder.</p>
             </div>
         </div>
 
