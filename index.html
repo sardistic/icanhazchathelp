@@ -69,6 +69,11 @@
         .incident {
             margin-top: 20px;
             font-size: 14px;
+            background-color: #282828;
+            padding: 15px;
+            border-radius: 5px;
+            color: #E0E0E0;
+            text-align: left;
         }
         .incident a {
             color: #2196F3;
@@ -77,25 +82,27 @@
         .incident a:hover {
             text-decoration: underline;
         }
-        /* CSS3 Background Animation */
+        footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+        /* Mouse-reactive Background Animation */
         .background {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, #2196F3, #1E1E1E, #1976D2);
-            background-size: 400% 400%;
+            background: radial-gradient(circle at center, #2196F3, #1E1E1E);
             z-index: 1;
-            animation: gradientAnimation 15s ease infinite;
         }
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .background:hover {
+            animation: none;
         }
-        .container:hover {
-            box-shadow: 0 0 40px rgba(33, 150, 243, 0.8);
+        @keyframes moveGradient {
+            0% { background-position: 50% 50%; }
+            100% { background-position: calc(var(--mouseX) * 1%) calc(var(--mouseY) * 1%); }
         }
     </style>
 </head>
@@ -123,8 +130,23 @@
         </div>
 
         <div class="incident">
-            <p>Incident with Wowza WebRTC Publishing Page - Failing on Chrome Browser Version 127.0.6533.73: <a href="https://status.wowza.com/clz2kdat3244008iboeemdk78bv" target="_blank">View Incident Report</a></p>
+            <p><strong>Incident with Wowza WebRTC Publishing Page:</strong> Users are experiencing failures on Chrome Browser Version 127.0.6533.73. <a href="https://status.wowza.com/clz2kdat3244008iboeemdk78bv" target="_blank">Read more</a></p>
         </div>
+
+        <footer>
+            <p>Brought to you by Sardistic &copy; 2024</p>
+        </footer>
     </div>
+
+    <script>
+        const background = document.querySelector('.background');
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            background.style.setProperty('--mouseX', x * 100);
+            background.style.setProperty('--mouseY', y * 100);
+            background.style.animation = 'moveGradient 0.1s ease-in-out forwards';
+        });
+    </script>
 </body>
 </html>
