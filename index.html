@@ -168,6 +168,13 @@
 </head>
 <body>
     <div class="background"></div>
+
+    <!-- New Announcement Box -->
+    <div class="announcement-box">
+        <p><strong>New Fix Available!</strong> We've released a Chrome extension to address the "peer connection failed" issue. 
+        <a href="https://github.com/sardistic/ICHC-Peer-Fix/tree/main" target="_blank">Download it here</a>.</p>
+    </div>
+
     <div class="container">
         <div class="profile">
             <img src="https://images.icanhazchat.com/users/sa/sardistic/cEFJZ.gif" alt="Profile Picture">
@@ -187,7 +194,7 @@
         </div>
 
         <div class="message">
-            <p>Navigate to either the Mac or Windows links bellow from an official Chrome snapshot repository</p>
+            <p>Navigate to either the Mac or Windows links below from an official Chrome snapshot repository</p>
             <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Mac/1266941/" class="download-link" download>Download Chrome v126.66 for Mac</a>
             <p>1. Download the <code>chrome-mac.zip</code> file.</p>
             <p>2. Extract the contents.</p>
@@ -213,5 +220,25 @@
             <p>sardistic &copy; 2024</p>
         </footer>
     </div>
+
+    <style>
+        .announcement-box {
+            background-color: #f9edbe;
+            border: 1px solid #f0c36d;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            font-family: Arial, sans-serif;
+        }
+
+        .announcement-box a {
+            color: #d69d00;
+            text-decoration: underline;
+        }
+    </style>
 </body>
+
 </html>
