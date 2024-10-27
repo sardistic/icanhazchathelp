@@ -142,6 +142,34 @@
             vertical-align: middle;
             margin-right: 5px;
         }
+        .announcement-box {
+            background-color: #333;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .announcement-box p {
+            color: #F8C471;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #3498DB;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .button:hover {
+            background-color: #2980B9;
+        }
         .disclaimer {
             background-color: #2C2C2C;
             padding: 10px;
@@ -189,9 +217,10 @@
             </div>
         </div>
 
-        <!-- New Announcement Box -->
+        <!-- Updated Announcement Box -->
         <div class="announcement-box">
-            <p><strong>New Fix Available!</strong> We've released a Chrome extension to address the "peer connection failed" issue.</p>
+            <p>New Fix Available!</p>
+            <p>We've released a Chrome extension to address the "peer connection failed" issue.</p>
             <a href="https://chromewebstore.google.com/detail/ichc-peer-fix/adbjhienfppgcdphmmglknhjjkfkbkjd?authuser=2&hl=en" target="_blank" class="button">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Google_Chrome_icon_%282011%29.png" alt="Chrome Web Store Icon" class="chrome-icon">
                 Download it here
@@ -211,20 +240,13 @@
             <p>2. Extract the contents.</p>
             <p>3. Run <code>chrome.app</code> (no installation required).</p>
 
-            <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Win/1252758/" class="download-link" download>Download Chrome v 125.27 for Windows</a>
-            <p>1. Download the <code>chrome-win.zip</code> file.</p>
-            <p>2. Extract the contents.</p>
-            <p>3. Run <code>chrome.exe</code> (no installation required).</p>
+            <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Win/1266941/" class="download-link" download>Download Chrome v126.66 for Windows</a>
+            <p>1. Download the <code>mini_installer.exe</code> file.</p>
+            <p>2. Open the <code>.exe</code> file.</p>
+        </div>
 
-            <div class="timestamp">August 31, 2024, 12:50 PM</div>
-
-            <div class="disclaimer">
-                <p><strong>Security Notice:</strong> Using older browsers can expose you to security vulnerabilities. These standalone versions of Chrome are provided for testing purposes only and are not recommended for regular use.</p>
-            </div>
-
-            <div class="incident">
-                <p><strong>Incident Information:</strong> For more details on this issue, please refer to our <a href="https://status.icanhazchat.com/incidents/PeerConnectionError">incident report</a>.</p>
-            </div>
+        <div class="incident">
+            <strong>Information:</strong> For more details on this issue, please refer to our <a href="https://status.icanhazchat.com/incidents/PeerConnectionError">incident report</a>.
         </div>
 
         <footer>Thank you for your patience. Our team is actively working on a long-term solution.</footer>
