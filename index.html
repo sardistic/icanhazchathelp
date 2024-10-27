@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peer Connection Failed</title>
+    <link rel="icon" href="https://github.com/sardistic/icanhazchathelp/blob/main/helpfav.jpg" type="image/jpg">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -135,6 +136,12 @@
         .download-link:hover {
             background-color: #2980B9;
         }
+        .chrome-icon {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
         .disclaimer {
             background-color: #2C2C2C;
             padding: 10px;
@@ -185,7 +192,11 @@
         <!-- New Announcement Box -->
         <div class="announcement-box">
             <p><strong>New Fix Available!</strong> We've released a Chrome extension to address the "peer connection failed" issue.</p>
-            <a href="https://github.com/sardistic/ICHC-Peer-Fix/tree/main" target="_blank" class="button">Download it here</a>
+            <a href="https://chromewebstore.google.com/detail/ichc-peer-fix/adbjhienfppgcdphmmglknhjjkfkbkjd?authuser=2&hl=en" target="_blank" class="button">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Google_Chrome_icon_%282011%29.png" alt="Chrome Web Store Icon" class="chrome-icon">
+                Download it here
+            </a>
+            <p><a href="https://github.com/sardistic/ICHC-Peer-Fix/tree/main" target="_blank">GitHub Repository</a></p>
         </div>
 
         <div class="info-blurb">
@@ -212,46 +223,11 @@
             </div>
 
             <div class="incident">
-                <p><strong>Incident with Wowza WebRTC Publishing Page:</strong> Users are experiencing failures on Chrome Browser Version 127.0.6533.73. <a href="https://status.wowza.com/clz2kdat3244008iboeemdk78bv" target="_blank">More details here</a></p>
+                <p><strong>Incident Information:</strong> For more details on this issue, please refer to our <a href="https://status.icanhazchat.com/incidents/PeerConnectionError">incident report</a>.</p>
             </div>
         </div>
 
-        <footer>
-            <p>sardistic &copy; 2024</p>
-        </footer>
+        <footer>Thank you for your patience. Our team is actively working on a long-term solution.</footer>
     </div>
-
-    <style>
-        .announcement-box {
-            background-color: #007BFF; /* Bootstrap primary color */
-            color: white; /* White text for contrast */
-            border-radius: 5px;
-            padding: 15px;
-            margin: 15px auto; /* Center the box */
-            text-align: center;
-            position: relative;
-            z-index: 10;
-            font-family: Arial, sans-serif;
-            max-width: 600px; /* Set a max width for the box */
-        }
-
-        .announcement-box a {
-            text-decoration: none; /* Remove underline */
-            background-color: #0056b3; /* Darker shade of the blue */
-            color: white; /* White text for button */
-            padding: 10px 20px; /* Button padding */
-            border-radius: 5px; /* Rounded corners for button */
-            display: inline-block; /* Make it look like a button */
-            margin-top: 10px; /* Space above the button */
-            font-weight: bold; /* Make button text bold */
-        }
-
-        .announcement-box a:hover {
-            background-color: #004494; /* Darker on hover */
-        }
-    </style>
 </body>
-
-
-
 </html>
