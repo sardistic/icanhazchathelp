@@ -1,242 +1,372 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peer Connection Failed</title>
-    <link rel="icon" href="https://github.com/sardistic/icanhazchathelp/blob/main/helpfav.jpg" type="image/jpg">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #0D0D0D;
-            color: #E0E0E0;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
-        }
-        .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #1A1A1A;
-            z-index: 1;
-            overflow: hidden;
-        }
-        .background::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(
-                135deg,
-                #2C2C2C 0px,
-                #2C2C2C 2px,
-                transparent 2px,
-                transparent 4px
-            );
-            filter: blur(10px);
-            transition: filter 0.2s ease;
-        }
-        .background:hover::before {
-            filter: blur(2px);
-        }
-        .container {
-            max-width: 600px;
-            background-color: #1A1A1A;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.2s ease;
-        }
-        .container:hover {
-            transform: scale(1.05);
-        }
-        .profile {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            padding: 10px;
-            background-color: #2C2C2C;
-            border-radius: 5px;
-        }
-        .profile img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin-right: 15px;
-        }
-        .profile-info {
-            display: flex;
-            flex-direction: column;
-        }
-        .profile-info h2 {
-            font-size: 18px;
-            margin: 0;
-            color: #F8C471;
-        }
-        .profile-info h2 a {
-            color: #F8C471;
-            text-decoration: none;
-        }
-        .profile-info h2 a:hover {
-            text-decoration: underline;
-        }
-        .profile-info .bio {
-            font-size: 12px;
-            color: #B0B0B0;
-            margin-top: 5px;
-        }
-        .message {
-            background-color: #333;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            color: #E0E0E0;
-            text-align: left;
-            position: relative;
-        }
-        .timestamp {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            font-size: 12px;
-            color: #888;
-        }
-        .info-blurb {
-            background-color: #2C2C2C;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            position: relative;
-        }
-        .download-link {
-            display: inline-block;
-            margin: 10px 0;
-            padding: 10px 20px;
-            font-size: 16px;
-            color: #fff;
-            background-color: #3498DB;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        }
-        .download-link:hover {
-            background-color: #2980B9;
-        }
-        .chrome-icon {
-            width: 20px;
-            height: 20px;
-            vertical-align: middle;
-            margin-right: 5px;
-        }
-        .announcement-box {
-            background-color: #333;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .announcement-box p {
-            color: #F8C471;
-            font-size: 16px;
-            font-weight: bold;
-            margin: 0;
-        }
-        .button {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-            color: #fff;
-            background-color: #3498DB;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        }
-        .button:hover {
-            background-color: #2980B9;
-        }
-        .disclaimer {
-            background-color: #2C2C2C;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 12px;
-            color: #B0B0B0;
-            margin-top: 20px;
-        }
-        .incident {
-            margin-top: 20px;
-            font-size: 14px;
-            background-color: #444;
-            padding: 15px;
-            border-radius: 5px;
-            color: #E0E0E0;
-            text-align: left;
-        }
-        .incident a {
-            color: #F8C471;
-            text-decoration: none;
-        }
-        .incident a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            margin-top: 20px;
-            font-size: 12px;
-            color: #777;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>icanhazchat.help</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #14141a;
+  --bg2: #1c1c24;
+  --bg3: #22222c;
+  --border: #2e2e3e;
+  --text: #c8c4bc;
+  --text-dim: #7a7870;
+  --text-bright: #e8e4dc;
+  --blue: #5b9bd5;
+  --blue-hover: #7ab3e8;
+  --green: #4caf78;
+  --green-hover: #5fd08e;
+  --amber: #c8924a;
+  --amber-dim: #7a5a2e;
+}
+
+html { font-size: 16px; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a { color: var(--blue); text-decoration: none; }
+a:hover { color: var(--blue-hover); text-decoration: underline; }
+
+/* ── Extension banner ─────────────────────────────────────────────────── */
+
+.ext-banner {
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  padding: 28px 0 24px;
+}
+
+.ext-banner-inner {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.ext-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.ext-heading {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.ext-heading a {
+  color: inherit;
+}
+.ext-heading a:hover {
+  color: var(--green-hover);
+  text-decoration: none;
+}
+
+.ext-desc {
+  font-size: 0.975rem;
+  color: var(--text);
+  margin-bottom: 18px;
+  max-width: 560px;
+}
+
+.ext-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.ext-features li {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  padding-left: 16px;
+  position: relative;
+}
+
+.ext-features li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--green);
+}
+
+.ext-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn-install {
+  display: inline-block;
+  padding: 9px 20px;
+  background: var(--green);
+  color: #0f1a12;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+.btn-install:hover {
+  background: var(--green-hover);
+  text-decoration: none;
+  color: #0f1a12;
+}
+
+.btn-source {
+  display: inline-block;
+  padding: 9px 18px;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  border-radius: 6px;
+  transition: border-color 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.btn-source:hover {
+  border-color: var(--text-dim);
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* ── Archive section ──────────────────────────────────────────────────── */
+
+.archive-wrap {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
+}
+
+.archive-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--amber);
+  background: rgba(200, 146, 74, 0.08);
+  border: 1px solid var(--amber-dim);
+  border-radius: 4px;
+  padding: 4px 10px;
+  margin-bottom: 20px;
+}
+
+.archive-resolved {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--green);
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin-bottom: 28px;
+  font-size: 0.9rem;
+}
+
+.archive-resolved strong {
+  color: var(--green);
+}
+
+.archive-heading {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.archive-meta {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin-bottom: 24px;
+}
+
+.archive-meta .profile-link {
+  color: var(--amber);
+}
+
+.block {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  font-size: 0.92rem;
+}
+
+.block h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-bright);
+  margin-bottom: 10px;
+}
+
+.block p + p {
+  margin-top: 10px;
+}
+
+.block a {
+  color: var(--blue);
+}
+
+.block-announce {
+  border-color: var(--blue);
+  border-left: 3px solid var(--blue);
+}
+
+.tag-resolved {
+  display: inline-block;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--green);
+  background: rgba(76, 175, 120, 0.1);
+  border: 1px solid rgba(76, 175, 120, 0.3);
+  border-radius: 3px;
+  padding: 1px 6px;
+  margin-left: 8px;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 20px 24px;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+footer a { color: var(--text-dim); }
+footer a:hover { color: var(--text); }
+
+@media (max-width: 520px) {
+  .ext-heading { font-size: 1.35rem; }
+  .ext-actions { flex-direction: column; align-items: flex-start; }
+}
+</style>
 </head>
 <body>
-    <div class="background"></div>
 
-    <div class="container">
-        <div class="profile">
-            <img src="https://images.icanhazchat.com/users/sa/sardistic/cEFJZ.gif" alt="Profile Picture">
-            <div class="profile-info">
-                <h2><a href="https://www.icanhazchat.com/user/sardistic" target="_blank">sardistic</a></h2>
-                <div class="bio">
-                    Breaking hearts since: December 2010<br>
-                    Last seen: 3 hours ago<br>
-                    Karma: 51507
-                </div>
-            </div>
-        </div>
+<!-- ── Extension banner ─────────────────────────────────────────────── -->
 
-        <!-- Updated Announcement Box -->
-        <div class="announcement-box">
-            <p>New Fix Available!</p>
-            <p>We've released a Chrome extension to address the <br> "peer connection failed" issue.</p>
-            <a href="https://chromewebstore.google.com/detail/ichc-peer-fix/adbjhienfppgcdphmmglknhjjkfkbkjd?authuser=2&hl=en" target="_blank" class="button">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Google_Chrome_icon_%282011%29.png" alt="Chrome Web Store Icon" class="chrome-icon">
-                Download it here
-            </a>
-            <p><a href="https://github.com/sardistic/ICHC-Peer-Fix/tree/main" target="_blank">GitHub Repository</a></p>
-        </div>
-
-        <div class="info-blurb">
-            <p>If you're experiencing a "peer connection failed" error when attempting to broadcast your camera, this is a known issue with the recent Chrome 127 update. This problem also affects other Chromium-based browsers such as Edge, Opera, and Brave.</p>
-            <div class="timestamp">August 31, 2024, 12:45 PM</div>
-        </div>
-        <div class="incident">
-            <strong>Information:</strong> For more details on this issue, please refer to the <a href="https://status.wowza.com/clz2kdat3244008iboeemdk78bv">incident report</a>.
-        </div>
-
-        <footer>copyright © sardistic</footer>
+<header class="ext-banner">
+  <div class="ext-banner-inner">
+    <p class="ext-eyebrow">Chrome Extension</p>
+    <h1 class="ext-heading">
+      <a href="https://chromewebstore.google.com/detail/icanhazbetter/enjkicmpjlpmjaclnbndhagigoomgnfm" target="_blank" rel="noopener">icanhazbetter</a>
+    </h1>
+    <p class="ext-desc">
+      A browser extension that improves the icanhazchat.com experience in ways the site doesn't bother to. Installs in seconds, no account needed.
+    </p>
+    <ul class="ext-features">
+      <li>Blocked and hidden cams stay hidden across page reloads</li>
+      <li>Resizable, reorderable cam grid with saved layout preferences</li>
+      <li>Private message panel state persists between sessions</li>
+      <li>Link previews in chat, cleaned-up icons, and various smaller fixes</li>
+    </ul>
+    <div class="ext-actions">
+      <a class="btn-install"
+         href="https://chromewebstore.google.com/detail/icanhazbetter/enjkicmpjlpmjaclnbndhagigoomgnfm"
+         target="_blank" rel="noopener">
+        Add to Chrome
+      </a>
+      <a class="btn-source"
+         href="https://github.com/sardistic/icanhazbetter"
+         target="_blank" rel="noopener">
+        View source on GitHub
+      </a>
     </div>
+  </div>
+</header>
+
+<!-- ── Archive ──────────────────────────────────────────────────────── -->
+
+<main class="archive-wrap">
+
+  <div class="archive-label">
+    Archive — Aug 2024
+  </div>
+
+  <div class="archive-resolved">
+    <strong>Resolved.</strong> The peer connection issue described below has been fixed by the site owner. This page is kept for reference only.
+  </div>
+
+  <h2 class="archive-heading">
+    "Peer connection failed" on camera broadcast
+    <span class="tag-resolved">Resolved</span>
+  </h2>
+  <p class="archive-meta">
+    Posted August 31, 2024 by
+    <a class="profile-link" href="https://icanhazchat.com/user/sardistic" target="_blank" rel="noopener">sardistic</a>
+    &nbsp;·&nbsp; Member since December 2010 &nbsp;·&nbsp; Karma 51,507
+  </p>
+
+  <div class="block block-announce">
+    <h3>What was happening</h3>
+    <p>
+      After Chrome 127 shipped in mid-August 2024, users on Chromium-based browsers
+      (Chrome, Edge, Opera, Brave) started seeing a "peer connection failed" error
+      whenever they tried to broadcast their camera. This was not an account issue or
+      a settings problem — it affected everyone on those browsers equally.
+    </p>
+    <p>
+      The root cause was a change in Chrome 127 that broke the WebRTC peer negotiation
+      icanhazchat's streaming layer relies on. The Wowza infrastructure the site uses
+      was affected; their team published an incident report at the time.
+    </p>
+  </div>
+
+  <div class="block">
+    <h3>The temporary fix (at the time)</h3>
+    <p>
+      While waiting on the site to patch things on their end, I put together a Chrome
+      extension called <strong>ICHC Peer Fix</strong> that worked around the issue.
+      It's no longer needed for this specific problem, but the newer
+      <a href="https://chromewebstore.google.com/detail/icanhazbetter/enjkicmpjlpmjaclnbndhagigoomgnfm" target="_blank" rel="noopener">icanhazbetter</a>
+      extension supersedes it with a broader set of improvements.
+    </p>
+  </div>
+
+  <div class="block">
+    <h3>What browsers were affected</h3>
+    <p>Chrome 127+, Microsoft Edge (Chromium), Opera, and Brave — anything running on
+    the Chromium 127 engine. Firefox was not affected. Safari was not affected.</p>
+  </div>
+
+  <div class="block">
+    <h3>Current status</h3>
+    <p>
+      Fixed. The site owner resolved the issue on their end. If you're still seeing
+      peer connection errors, it's most likely an unrelated cause — check your browser
+      permissions for camera access, or try a hard refresh.
+    </p>
+  </div>
+
+</main>
+
+<footer>
+  <a href="https://icanhazchat.com" target="_blank" rel="noopener">icanhazchat.com</a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/sardistic/icanhazbetter" target="_blank" rel="noopener">GitHub</a>
+</footer>
+
 </body>
 </html>
