@@ -362,6 +362,24 @@ footer {
 footer a { color: var(--text-dim); }
 footer a:hover { color: var(--text); }
 
+/* ── Scrollbar ────────────────────────────────────────────────────────── */
+
+:root {
+  scrollbar-color: #3a7d5c var(--bg2);
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #4caf78 0%, #5b9bd5 60%, #8b6fb5 100%);
+  border-radius: 4px;
+  border: 2px solid var(--bg2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #5fd08e 0%, #7ab3e8 60%, #a688d4 100%);
+}
+
 @media (max-width: 540px) {
   .ext-top-row { gap: 14px; }
   .ext-icon { width: 52px; height: 52px; border-radius: 12px; }
