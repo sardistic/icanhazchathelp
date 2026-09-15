@@ -28,7 +28,7 @@
   --bg3: #22222c;
   --border: #2e2e3e;
   --text: #c8c4bc;
-  --text-dim: #7a7870;
+  --text-dim: #9b9890;
   --text-bright: #e8e4dc;
   --blue: #5b9bd5;
   --blue-hover: #7ab3e8;
@@ -302,10 +302,11 @@ a:hover { color: var(--blue-hover); text-decoration: underline; }
 
 .archive-resolved strong { color: var(--green); }
 
-/* Everything below the resolved notice gets faded */
+/* The archived material remains readable; the border treatment conveys status
+   without reducing the contrast of every descendant. */
 .archive-faded {
-  opacity: 0.45;
-  filter: saturate(0.6);
+  border-left: 2px solid var(--border);
+  padding-left: 16px;
 }
 
 .archive-heading {
@@ -323,6 +324,11 @@ a:hover { color: var(--blue-hover); text-decoration: underline; }
 }
 
 .archive-meta .profile-link { color: var(--amber); }
+.archive-meta a,
+.block p a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 
 .block {
   background: var(--bg2);
@@ -409,7 +415,7 @@ footer a:hover { color: var(--text); }
   <div class="site-brand-inner">
     <a class="brand-link" href="https://www.sardistic.com" target="_blank" rel="noopener">
       <img class="brand-img"
-           src="https://www.sardistic.com/wp-content/uploads/2026/02/liquid_transparent.webp"
+           src="sardistic-logo.webp" width="96" height="72"
            alt="sardistic logo">
       <span class="brand-name">sardistic</span>
     </a>
@@ -423,7 +429,7 @@ footer a:hover { color: var(--text); }
 
     <div class="ext-top-row">
       <div class="ext-icon-wrap">
-        <img class="ext-icon" src="extension_logo_128x128.png" alt="icanhazbetter icon">
+        <img class="ext-icon" src="extension-logo.webp" width="96" height="96" alt="icanhazbetter icon">
       </div>
 
       <div class="ext-title-group">
