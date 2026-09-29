@@ -261,6 +261,49 @@ a:hover { color: var(--blue-hover); text-decoration: underline; }
   text-decoration: none;
 }
 
+/* ── Other browsers ───────────────────────────────────────────────────── */
+
+.ext-other {
+  margin-top: 16px;
+  max-width: 560px;
+  font-size: 0.85rem;
+}
+
+.ext-other summary {
+  display: inline-block;
+  cursor: pointer;
+  color: var(--text-dim);
+  list-style: none;
+  user-select: none;
+}
+.ext-other summary::-webkit-details-marker { display: none; }
+.ext-other summary::before {
+  content: "▸";
+  display: inline-block;
+  width: 14px;
+  color: var(--green);
+  transition: transform 0.15s;
+}
+.ext-other[open] summary::before { transform: rotate(90deg); }
+.ext-other summary:hover { color: var(--text); }
+
+.ext-other ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 14px 16px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-dim);
+}
+
+.ext-other strong { color: var(--text); font-weight: 600; }
+.ext-other em { font-style: normal; color: var(--text); }
+.ext-other-no { font-style: italic; }
+
 /* ── Archive section ──────────────────────────────────────────────────── */
 
 .archive-wrap {
@@ -433,7 +476,7 @@ footer a:hover { color: var(--text); }
       </div>
 
       <div class="ext-title-group">
-        <p class="ext-eyebrow">Chrome Extension</p>
+        <p class="ext-eyebrow">Chrome &amp; Firefox Extension</p>
         <h1 class="ext-heading">
           <a href="https://chromewebstore.google.com/detail/icanhazbetter/enjkicmpjlpmjaclnbndhagigoomgnfm"
              target="_blank" rel="noopener">icanhazbetter</a><span class="badge-new">new</span>
@@ -459,12 +502,51 @@ footer a:hover { color: var(--text); }
          target="_blank" rel="noopener">
         Add to Chrome
       </a>
+      <a class="btn-install"
+         href="https://addons.mozilla.org/en-US/firefox/addon/icanhazbetter/"
+         target="_blank" rel="noopener">
+        Add to Firefox
+      </a>
       <a class="btn-source"
          href="https://github.com/sardistic/icanhazbetter"
          target="_blank" rel="noopener">
         View source on GitHub
       </a>
     </div>
+
+    <details class="ext-other">
+      <summary>Using a different browser?</summary>
+      <ul>
+        <li>
+          <strong>Edge</strong> — open the
+          <a href="https://chromewebstore.google.com/detail/icanhazbetter/enjkicmpjlpmjaclnbndhagigoomgnfm" target="_blank" rel="noopener">Chrome Web Store listing</a>,
+          click <em>Allow extensions from other stores</em> in the banner at the top, then install.
+        </li>
+        <li>
+          <strong>Opera</strong> — open the
+          <a href="https://chromewebstore.google.com/detail/icanhazbetter/enjkicmpjlpmjaclnbndhagigoomgnfm" target="_blank" rel="noopener">Chrome Web Store listing</a>
+          and click <em>Add to Opera</em>.
+        </li>
+        <li>
+          <strong>Brave, Vivaldi &amp; other Chromium browsers</strong> — install straight from the
+          <a href="https://chromewebstore.google.com/detail/icanhazbetter/enjkicmpjlpmjaclnbndhagigoomgnfm" target="_blank" rel="noopener">Chrome Web Store</a>.
+        </li>
+        <li>
+          <strong>LibreWolf, Waterfox, Zen, Floorp</strong> — use the
+          <a href="https://addons.mozilla.org/en-US/firefox/addon/icanhazbetter/" target="_blank" rel="noopener">Firefox Add-ons listing</a>
+          (needs a Firefox 128+ base).
+        </li>
+        <li>
+          <strong>Manual install</strong> — download the
+          <a href="https://github.com/sardistic/icanhazbetter/archive/refs/heads/master.zip">source ZIP</a>
+          and extract it, turn on <em>Developer mode</em> on your browser's extensions page, then
+          <em>Load unpacked</em> and pick the extracted folder. Manual installs don't auto-update.
+        </li>
+        <li class="ext-other-no">
+          Safari and mobile browsers aren't supported.
+        </li>
+      </ul>
+    </details>
 
   </div>
 </header>
