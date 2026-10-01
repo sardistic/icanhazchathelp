@@ -69,18 +69,25 @@ a:hover { color: var(--blue-hover); text-decoration: underline; }
 .brand-link {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 2px;
   text-decoration: none;
   flex-shrink: 0;
 }
 
 .brand-link:hover { text-decoration: none; }
 
+.brand-icon {
+  width: 23px;
+  height: 36px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
 .brand-img {
   height: 36px;
-  width: auto;
+  width: 48px;
   display: block;
-  opacity: 0.9;
+  transform: translateX(-13px);
 }
 
 .brand-name {
@@ -456,11 +463,11 @@ footer a:hover { color: var(--text); }
 
 <div class="site-brand">
   <div class="site-brand-inner">
-    <a class="brand-link" href="https://www.sardistic.com" target="_blank" rel="noopener">
-      <img class="brand-img"
-           src="sardistic-logo.webp" width="96" height="72"
-           alt="sardistic logo">
-      <span class="brand-name">sardistic</span>
+    <a class="brand-link" href="https://sardistic.com" target="_blank" rel="noopener" aria-label="sardistic">
+      <span class="brand-icon" aria-hidden="true">
+        <img class="brand-img" src="liquid-logo-160.webp" width="160" height="120" alt="">
+      </span>
+      <span class="brand-name">ardistic</span>
     </a>
   </div>
 </div>
