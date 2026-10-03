@@ -268,6 +268,19 @@ a:hover { color: var(--blue-hover); text-decoration: underline; }
   text-decoration: none;
 }
 
+.ext-store-note {
+  margin-top: 12px;
+  max-width: 560px;
+  padding: 10px 14px;
+  border-left: 3px solid var(--amber);
+  border-radius: 4px;
+  background: var(--bg3);
+  color: var(--text);
+  font-size: 0.85rem;
+}
+
+.ext-store-note strong { color: var(--text-bright); }
+
 /* ── Other browsers ───────────────────────────────────────────────────── */
 
 .ext-other {
@@ -493,7 +506,7 @@ footer a:hover { color: var(--text); }
     </div>
 
     <p class="ext-desc">
-      A browser extension that improves the icanhazchat.com experience in ways the site doesn't bother to. Installs in seconds, no account needed.
+      A browser extension that improves the icanhazchat.com experience in ways the site doesn't bother to. Installs in seconds, no separate extension account needed.
     </p>
 
     <ul class="ext-features">
@@ -506,7 +519,7 @@ footer a:hover { color: var(--text); }
     <div class="ext-actions">
       <a class="btn-install"
          href="https://chromewebstore.google.com/detail/icanhazbetter/enjkicmpjlpmjaclnbndhagigoomgnfm"
-         target="_blank" rel="noopener">
+         target="_blank" rel="noopener" aria-describedby="chrome-store-note">
         Add to Chrome
       </a>
       <a class="btn-install"
@@ -520,6 +533,10 @@ footer a:hover { color: var(--text); }
         View source on GitHub
       </a>
     </div>
+
+    <p class="ext-store-note" id="chrome-store-note">
+      <strong>Chrome Web Store note:</strong> The extension is marked as mature, so you must sign in to your Google account to view the listing.
+    </p>
 
     <details class="ext-other">
       <summary>Using a different browser?</summary>
